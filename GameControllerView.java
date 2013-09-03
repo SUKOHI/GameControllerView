@@ -208,7 +208,6 @@ public class GameControllerView extends View {
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
-		canvas.drawColor(Color.BLACK);
 		paint.setStyle(Paint.Style.FILL);
         paint.setColor(keyColor);
 

@@ -48,6 +48,7 @@ public class GameControllerView extends View {
 	private int viewWidth, viewHeight, controllerPadding, crossKeyRepeatInterval;
 	private int keyColor = Color.parseColor("#88FFFFFF");
 	private GameControllerViewCallback gameControllerViewCallback;
+	private Timer timer;
 	private Handler handler = new Handler();
 	
 	public GameControllerView(Context context, AttributeSet attrs) {
@@ -90,8 +91,6 @@ public class GameControllerView extends View {
         	keyStatuses.put(i, false);
         	
         }
-        
-        crossKeyRepeat();
         
 	}
 	
@@ -170,7 +169,14 @@ public class GameControllerView extends View {
 	
 	public void setCrossKeyRepeatInterval(int milliseconds) {
 		
+		if(timer != null) {
+			
+			timer.cancel();
+			
+		}
+		
 		crossKeyRepeatInterval = milliseconds;
+		crossKeyRepeat();
 		
 	}
 	
@@ -584,9 +590,8 @@ public class GameControllerView extends View {
 		
 		if(crossKeyRepeatInterval > 0) {
 		
-	        Timer timer = null;
+	        timer = null;
 	        timer = new Timer();
-	
 	        timer.schedule(new TimerTask() {
 	
 	            @Override
@@ -620,7 +625,7 @@ public class GameControllerView extends View {
 					
 	            }
 	
-	        }, 0, crossKeyRepeatInterval);
+	        }, crossKeyRepeatInterval, crossKeyRepeatInterval);
         
 		}
         

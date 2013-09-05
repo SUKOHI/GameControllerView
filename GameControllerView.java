@@ -24,18 +24,18 @@ import android.view.View;
 
 public class GameControllerView extends View {
 	
-	public int KEY_LEFT = 0;
-	public int KEY_UP = 1;
-	public int KEY_RIGHT = 2;
-	public int KEY_DOWN = 3;
-	public int KEY_A = 4;
-	public int KEY_B = 5;
-	public int KEY_Y = 6;
-	public int KEY_X = 7;
-	public int KEY_L = 8;
-	public int KEY_R = 9;
-	public int KEY_SELECT = 10;
-	public int KEY_START = 11;
+	public static final int KEY_LEFT = 0;
+	public static final int KEY_UP = 1;
+	public static final int KEY_RIGHT = 2;
+	public static final int KEY_DOWN = 3;
+	public static final int KEY_A = 4;
+	public static final int KEY_B = 5;
+	public static final int KEY_Y = 6;
+	public static final int KEY_X = 7;
+	public static final int KEY_L = 8;
+	public static final int KEY_R = 9;
+	public static final int KEY_SELECT = 10;
+	public static final int KEY_START = 11;
 	private String[] keyNames = {
 			"left", "up", "right", "down", "A", "B", "Y", "X", "L", "R", "select", "start"
 	};
@@ -648,6 +648,17 @@ public class GameControllerView extends View {
 		public void on(int key, String keyName, SparseBooleanArray keyStatuses) {
 			
 			Log.v("on", ""+ key +": "+ keyName);
+			
+			case GameControllerView.KEY_LEFT:
+				break;
+			case GameControllerView.KEY_UP:
+				break;
+			case GameControllerView.KEY_RIGHT:
+				break;
+			case GameControllerView.KEY_DOWN:
+				break;
+			
+			// and so on.
 			
 		}
 		

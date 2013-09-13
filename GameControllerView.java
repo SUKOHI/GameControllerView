@@ -645,10 +645,10 @@ public class GameControllerView extends View {
 	GameControllerView gameControllerView = (GameControllerView) findViewById(R.id.game_controller_view);
 	gameControllerView.setCallback(new GameControllerViewCallback(){
 		
-		public void on(int key, String keyName, SparseBooleanArray keyStatuses) {
-			
-			Log.v("on", ""+ key +": "+ keyName);
-			
+		public void on(int keyNumber, String keyName, SparseBooleanArray keyStatuses) {
+				
+			switch(keyNumber) {
+		
 			case GameControllerView.KEY_LEFT:
 				break;
 			case GameControllerView.KEY_UP:
@@ -657,8 +657,10 @@ public class GameControllerView extends View {
 				break;
 			case GameControllerView.KEY_DOWN:
 				break;
-			
+		
 			// and so on.
+
+			}
 			
 		}
 		

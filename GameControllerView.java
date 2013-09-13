@@ -431,7 +431,7 @@ public class GameControllerView extends View {
 				return keyNumber;
 				
 			} else if((keyNumber == KEY_A || keyNumber == KEY_B || keyNumber == KEY_Y || keyNumber == KEY_X)
-					&& coodinateInRange.inRangeCircle(keyRectF, getABYXKeySize()[0])) {
+					&& coodinateInRange.inRangeCircle(keyRectF)) {
 				
 				return keyNumber;
 				
